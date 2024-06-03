@@ -1,0 +1,116 @@
+﻿<Window x:Class="AnimalShelter.windows.menu.MenuWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AnimalShelter.windows.menu"
+        mc:Ignorable="d"
+        Title="MenuWindow" Height="848" Width="1440"
+        WindowState="Maximized">
+    <Window.Background>
+        <ImageBrush ImageSource="\res\menu\фончик.png"/>
+    </Window.Background>
+    <Grid>
+        <StackPanel Orientation="Horizontal">
+            <StackPanel Orientation="Vertical" Margin ="93 100 0 0">
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="BtnAnimals" Width="135" Height="189" 
+                            BorderThickness="0" Click="BtnAnimals_Clic"
+                            Cursor="Hand"
+                            Background="Transparent">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Image Source="\res\menu\питомцы.png" Stretch="Fill"/>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    
+                    <Button x:Name="BtnVoler" Width="135" Height="189" 
+                            Margin="63 0  0 0 " BorderThickness="0" 
+                            Click="BtnVoler_Clic"
+                            Cursor="Hand"
+                            Background="Transparent">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Image Source="\res\menu\вольеры.png" Stretch="Fill"/>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    
+                    <Button x:Name="BtnFood" Width="135" Height="189" 
+                            Margin="63 0  0 0 " BorderThickness="0" 
+                            Click="BtnFood_Clic"
+                            Cursor="Hand"
+                            Background="Transparent">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Image Source="\res\menu\корм.png" Stretch="Fill"/>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </StackPanel>
+                
+                <StackPanel Orientation="Horizontal" Margin="0 60 0 0">
+                    <Button x:Name="BtnFamili" Width="135" Height="189" 
+                            BorderThickness="0" Click="BtnFamili_Clic"    
+                            Cursor="Hand"
+                            Background="Transparent">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Image Source="\res\menu\семья.png" Stretch="Fill"/>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="100 90 20 100"
+                        Height="648" Width="680"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center">
+                <StackPanel.Background>
+                    <ImageBrush ImageSource="\res\menu\забрали.png"/>
+                </StackPanel.Background>
+                <ListView x:Name="lvInManth"
+                          d:ItemsSource="{d:SampleData ItemCount=10}"
+                    BorderThickness="0" Width="628" Height="552" Margin="25 30 0 0"
+                          FontSize="23"
+                      ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                    <ListView.Background>
+                        <ImageBrush ImageSource="\res\menu\разделение.png"/>
+                    </ListView.Background>
+                    
+                    <ListView.View>
+                        <GridView >
+                            <GridViewColumn DisplayMemberBinding="{Binding  Nick}" 
+                                            Width="137">
+                                <HeaderedItemsControl Background="{x:Null}">
+                                    <TextBlock Text="Кличка" Background="{x:Null}"/>
+                                </HeaderedItemsControl>
+                            </GridViewColumn>
+                            <GridViewColumn DisplayMemberBinding="{Binding  Client}" 
+                                            Width="187">
+                                <HeaderedItemsControl Background="{x:Null}">
+                                    <TextBlock Text="Хозяин" Background="{x:Null}"/>
+                                </HeaderedItemsControl>
+                            </GridViewColumn>
+                            <GridViewColumn DisplayMemberBinding="{Binding  Phone}" 
+                                            Width="159">
+                                <HeaderedItemsControl Background="{x:Null}">
+                                    <TextBlock Text="Телефон" Background="{x:Null}"/>
+                                </HeaderedItemsControl>
+                            </GridViewColumn>
+                            <GridViewColumn DisplayMemberBinding="{Binding  Date, StringFormat={}{0:dd.MM.yyyy}}" 
+                                            Width="143">
+                                <HeaderedItemsControl Background="{x:Null}">
+                                    <TextBlock Text="Дата" Background="{x:Null}"/>
+                                </HeaderedItemsControl>
+                            </GridViewColumn>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+
+            </StackPanel>
+        </StackPanel>
+        
+    </Grid>
+</Window>

@@ -1,0 +1,201 @@
+﻿<Window x:Class="AnimalShelter.windows.menu.NewClientWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AnimalShelter.windows.menu"
+        mc:Ignorable="d"
+        Title="NewClientWindow" Height="848" Width="1540"
+        WindowState="Maximized">
+    <Window.Background>
+        <ImageBrush ImageSource="\res\Femili\фон.png"/>
+    </Window.Background>
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="10 39 0 0">
+                <Button x:Name="BtnAnimals" Width="225" Height="79"  
+        BorderThickness="0" Click="BtnAnimals_Clic"
+        Cursor="Hand"
+        Background="Transparent">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Image Source="\res\Animals\Group 34.png" Stretch="Fill"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <Button x:Name="BtnVoler" Width="113" Height="66" 
+        Margin="16 14  0 0 " BorderThickness="0" 
+        Click="BtnVoler_Clic"
+        Cursor="Hand"
+        Background="Transparent">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Image Source="\res\Animals\вольер.png" Stretch="Fill"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <Button x:Name="BtnFood" Width="113" Height="66"
+        Margin="16 14  0 0 " BorderThickness="0" 
+        Click="BtnFood_Clic"
+        Cursor="Hand"
+        Background="Transparent">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Image Source="\res\Animals\корм.png" Stretch="Fill"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <Button x:Name="BtnFamili" Width="113" Height="66" 
+        Margin="16 14  0 0 " BorderThickness="0" 
+        Click="BtnFamili_Clic"
+        Cursor="Hand"
+        Background="Transparent">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Image Source="\res\Animals\семья.png" Stretch="Fill"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <Button x:Name="BtnMenu" Width="50" Height="40" 
+        Margin="800 0  0 0" BorderThickness="0" 
+        Click="BtnMenu_Clic"
+        Cursor="Hand"
+        Background="Transparent">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Image Source="\res\Animals\меню.png" Stretch="Fill"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </StackPanel>
+            <Rectangle Height="730">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="\res\Animals\anim\фончик.png"/>
+                </Rectangle.Fill>
+            </Rectangle>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal"
+                        Margin="28 145 0 0">
+            <TextBlock x:Name="tbNikc"
+               FontSize="30"
+               Margin="0 0 0 0"/>
+            <TextBlock x:Name="tbBreed"
+               FontSize="25"
+               Margin="290 5 0 0"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Vertical"
+                    Margin="70 220 70 53">
+            <StackPanel.Background>
+                <ImageBrush ImageSource="\res\newClient\Rectangle 2.png"/>
+            </StackPanel.Background>
+            <TextBlock Text="Хозяин"
+                        FontSize="30"
+                        Margin="23 5 0 0"/>
+
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Фамилия"
+                            FontSize="27"
+                            Margin="64 22 0 0"/>
+                <TextBox x:Name="tbFirstName"
+                         FontSize="27"
+                         Width="368"
+                         Height="50"
+                         Margin="119 15 0 0">
+                    <TextBox.Background>
+                        <ImageBrush ImageSource="\res\newClient\Rectangle 13.png"/>
+                    </TextBox.Background>
+                </TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal"
+                        Margin="0 20 0 0">
+                <TextBlock Text="Имя"
+                FontSize="27"
+                Margin="64 7 0 0"/>
+                <TextBox x:Name="tbLastName"
+                         FontSize="27"
+                         Width="368"
+                         Height="50"
+                         Margin="176 0 0 0">
+                    <TextBox.Background>
+                        <ImageBrush ImageSource="\res\newClient\Rectangle 13.png"/>
+                    </TextBox.Background>
+                </TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal"
+            Margin="0 20 0 0">
+                <TextBlock Text="Телефон"
+                            FontSize="27"
+                            Margin="64 7 0 0"/>
+                <TextBox x:Name="tbPhone"
+             FontSize="27"
+             Width="368"
+             Height="50"
+             Margin="120 0 0 0">
+                    <TextBox.Background>
+                        <ImageBrush ImageSource="\res\newClient\Rectangle 13.png"/>
+                    </TextBox.Background>
+                </TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal"
+                        Margin="0 20 0 0">
+                <TextBlock Text="Дата рождения"
+                            FontSize="27"
+                            Margin="64 7 0 0"/>
+                <DatePicker x:Name="dpBirth"
+                            FontSize="27"
+                            Margin="44 0 0 0"
+                             Width="368"
+                            Height="50"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal"
+            Margin="0 20 0 0">
+                <TextBlock Text="Пол"
+                FontSize="27"
+                Margin="64 7 0 0"/>
+                <ComboBox x:Name="cmbGender"
+                                FontSize="27"
+                                Margin="180 0 0 0"
+                                Width="368"
+                                Height="50"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal"
+            Margin="0 20 0 0">
+                <TextBlock Text="Адрес"
+                    FontSize="27"
+                    Margin="64 7 0 0"/>
+                <TextBox x:Name="tbAddres"
+                         FontSize="27"
+                         Width="368"
+                         Height="50"
+                         Margin="139 0 0 0">
+                    <TextBox.Background>
+                        <ImageBrush ImageSource="\res\newClient\Rectangle 13.png"/>
+                    </TextBox.Background>
+                </TextBox>
+            </StackPanel>
+
+
+        </StackPanel>
+        <StackPanel VerticalAlignment="Bottom"
+            HorizontalAlignment="Right"
+            Margin="0 0 100 100"
+            Orientation="Horizontal">
+            <Button x:Name="btSave" Width="290" Height="75.78" 
+            BorderThickness="0" Click="btSave_Click"
+                    Cursor="Hand"
+                    Background="Transparent">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Image Source="\res\Animals\newAnim\кнопка.png" Stretch="Fill"/>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </StackPanel>
+    </Grid>
+</Window>

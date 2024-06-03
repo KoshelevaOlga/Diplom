@@ -1,0 +1,209 @@
+﻿<Window x:Class="AnimalShelter.windows.menu.Animals.enather.AllListWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AnimalShelter.windows.menu.Animals.enather"
+        mc:Ignorable="d"
+        Title="AllListWindow" Height="848" Width="1540"
+        WindowState="Maximized">
+    <Window.Background>
+        <ImageBrush ImageSource="\res\Femili\фон.png"/>
+    </Window.Background>
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="10 39 0 0">
+                <Button x:Name="BtnAnimals" Width="225" Height="79"  
+BorderThickness="0" Click="BtnAnimals_Clic"
+Cursor="Hand"
+Background="Transparent">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Image Source="\res\Animals\Group 34.png" Stretch="Fill"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <Button x:Name="BtnVoler" Width="113" Height="66" 
+Margin="16 14  0 0 " BorderThickness="0" 
+Click="BtnVoler_Clic"
+Cursor="Hand"
+Background="Transparent">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Image Source="\res\Animals\вольер.png" Stretch="Fill"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <Button x:Name="BtnFood" Width="113" Height="66"
+Margin="16 14  0 0 " BorderThickness="0" 
+Click="BtnFood_Clic"
+Cursor="Hand"
+Background="Transparent">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Image Source="\res\Animals\корм.png" Stretch="Fill"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <Button x:Name="BtnFamili" Width="113" Height="66" 
+Margin="16 14  0 0 " BorderThickness="0" 
+Click="BtnFamili_Clic"
+Cursor="Hand"
+Background="Transparent">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Image Source="\res\Animals\семья.png" Stretch="Fill"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <Button x:Name="BtnMenu" Width="50" Height="40" 
+Margin="800 0  0 0" BorderThickness="0" 
+Click="BtnMenu_Clic"
+Cursor="Hand"
+Background="Transparent">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Image Source="\res\Animals\меню.png" Stretch="Fill"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </StackPanel>
+            
+            <Rectangle Height="730">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="\res\Animals\anim\фончик.png"/>
+                </Rectangle.Fill>
+            </Rectangle>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal"  Margin=" 0 147 0 0">
+            <StackPanel Orientation="Vertical">
+                <Button x:Name="BtnKat" Width="60" Height="60" 
+                Margin="20 0  0 0" BorderThickness="0" Click="BtnKat_Click"
+                        Cursor="Hand"
+                        Background="Transparent">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Image Source="\res\Animals\anim\кот.png" Stretch="Fill"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <Button x:Name="BtnDog" Width="60" Height="60" 
+                Margin="20 35  0 0" BorderThickness="0" Click="BtnDog_Click" 
+                        Cursor="Hand"
+                        Background="Transparent">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Image Source="\res\Animals\anim\пес.png" Stretch="Fill"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <Button x:Name="BtnRebit" Width="60" Height="60" 
+                Margin="20 35  0 0" BorderThickness="0" Click="BtnRebit_Click" 
+                        Cursor="Hand"
+                        Background="Transparent">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Image Source="\res\Animals\anim\кроля.png" Stretch="Fill"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <Button x:Name="BtnAll" Width="60" Height="60" 
+                        Margin="20 35  0 0" BorderThickness="0" 
+                        Click="BtnAll_Click"
+                        Cursor="Hand"
+                        Background="Transparent">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Image Source="\res\Animals\anim\все.png" Stretch="Fill"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <Button x:Name="BtnNew" Width="60" Height="60" 
+                        Margin="20 35  0 0" BorderThickness="0" 
+                        Click="BtnNew_Click"
+                        Cursor="Hand"
+                        Background="Transparent">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Image Source="\res\Animals\anim\добавить.png" Stretch="Fill"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <ListView x:Name="lvAnim" 
+                      d:ItemsSource="{d:SampleData ItemCount=8}"
+                      ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                      BorderThickness="0" Width="1460">
+                    <ListView.Background>
+                        <ImageBrush ImageSource="\res\Femili\Rectangle 20.png"/>
+                    </ListView.Background>
+
+                    <ListView.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel/>
+                        </ItemsPanelTemplate>
+                    </ListView.ItemsPanel>
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Button x:Name="BtnAnim"
+                                    Width="300" Height="390" Margin="30 0 0 30"
+                                    BorderThickness="0" 
+                                    HorizontalContentAlignment="Left"
+                                    VerticalContentAlignment="Top"
+                                    Click="BtnAnim_Clic">
+                                <Button.Background>
+                                    <ImageBrush ImageSource="\res\Animals\anim\Rectangle 1.png"/>
+                                </Button.Background>
+
+                                <StackPanel Orientation="Vertical"
+                                            VerticalAlignment="Top">
+                                    <Image Height="211" Width="280"
+                                           Margin="10">
+                                        <Image.Source>
+                                            <Binding Path ="Photo">
+                                                <Binding.TargetNullValue>
+                                                    <ImageSource>/res\Animals\anim\Rectangle 6.png</ImageSource>
+                                                </Binding.TargetNullValue>
+                                            </Binding>
+                                        </Image.Source>
+                                    </Image>
+
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="{Binding Nick}"
+                                                   FontSize="24"
+                                                   Margin="8 0 0 0"/>
+                                        <TextBlock Text="{Binding Birth, StringFormat={}{0:dd.MM.yyyy}}"
+                                                   FontSize="22"
+                                                   Margin="30 3 0 0"/>
+                                    </StackPanel>
+                                    <TextBlock Text="{Binding Breed}"
+                                               FontSize="20"
+                                               Margin="8 5 0 0"/>
+                                    <TextBlock Text="{Binding Teg}"
+                                               FontSize="20"
+                                               Margin="8 5 0 0"/>
+                                    <TextBlock Text="{Binding Description}"
+                                               TextWrapping="Wrap"
+                                               FontSize="20"
+                                               Margin="8 5 0 0"/>
+                                </StackPanel>
+                            </Button>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
